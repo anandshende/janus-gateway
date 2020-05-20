@@ -226,9 +226,11 @@ Janus.init = function (options) {
 			// Janus.debug = console.debug.bind(console);
 			Janus.debug = (msg) => {
 				try {
-					console.debug(JSON.stringify(msg));
+					for (let i = 0; i < arguments.length; i++) {
+						console.debug(JSON.stringify(arguments[i]));
+					}
 				} catch (e) {
-					console.debug(msg);
+					console.debug(...arguments);
 				}
 			};
 			Janus.vdebug = console.debug.bind(console);
