@@ -224,13 +224,14 @@ Janus.init = function (options) {
 			// Enable all debugging levels
 			Janus.trace = console.trace.bind(console);
 			// Janus.debug = console.debug.bind(console);
-			Janus.debug = (msg) => {
+			Janus.debug = (msg, obj) => {
 				try {
-					for (let i = 0; i < arguments.length; i++) {
-						console.debug(JSON.stringify(arguments[i]));
+					console.debug(JSON.stringify(msg));
+					if (obj) {
+						console.debug(JSON.stringify(obj));
 					}
 				} catch (e) {
-					console.debug(...arguments);
+					console.debug(msg, obj);
 				}
 			};
 			Janus.vdebug = console.debug.bind(console);
