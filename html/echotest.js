@@ -44,9 +44,9 @@
 //
 var server = null;
 if(window.location.protocol === 'http:')
-	server = "http://" + window.location.hostname + "/janus";
+	server = "ws://" + window.location.hostname + "/janus";
 else
-	server = "https://" + window.location.hostname + "/janus";
+	server = "wss://" + window.location.hostname + "/janus";
 
 var janus = null;
 var echotest = null;
