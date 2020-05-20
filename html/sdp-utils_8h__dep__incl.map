@@ -1,0 +1,11 @@
+<map id="sdp&#45;utils.h" name="sdp&#45;utils.h">
+<area shape="rect" id="node1" title="SDP utilities (headers)" alt="" coords="162,5,253,32"/>
+<area shape="rect" id="node2" href="$sdp_8h.html" title="SDP processing (headers)" alt="" coords="131,80,188,107"/>
+<area shape="rect" id="node9" href="$sdp-utils_8c.html" title="SDP utilities." alt="" coords="212,80,301,107"/>
+<area shape="rect" id="node3" href="$ice_8h.html" title="ICE/STUN/TURN processing (headers)" alt="" coords="133,155,186,181"/>
+<area shape="rect" id="node6" href="$ice_8c.html" title="ICE/STUN/TURN processing." alt="" coords="5,304,57,331"/>
+<area shape="rect" id="node8" href="$sdp_8c.html" title="SDP processing." alt="" coords="255,304,311,331"/>
+<area shape="rect" id="node4" href="$janus_8h.html" title="Janus core (headers)" alt="" coords="125,229,194,256"/>
+<area shape="rect" id="node5" href="$dtls_8c.html" title="DTLS/SRTP processing." alt="" coords="81,304,139,331"/>
+<area shape="rect" id="node7" href="$janus_8c.html" title="Janus core." alt="" coords="163,304,231,331"/>
+</map>

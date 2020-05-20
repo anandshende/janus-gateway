@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['value_1768',['value',['../structjanus__config__container.html#ac9f5758c46de30bf9358b9647d9c024f',1,'janus_config_container::value()'],['../structjanus__sdp__attribute.html#a405c3a4a2af35c1a458651d003c81ba3',1,'janus_sdp_attribute::value()']]],
+  ['version_1769',['version',['../structjanus__sdp.html#abaa6c8583ea75e40cc2151e33b9f9b0c',1,'janus_sdp']]],
+  ['version_5fgiven_1770',['version_given',['../structgengetopt__args__info.html#ad4953a2130b2f8b94a3a687014f278e1',1,'gengetopt_args_info']]],
+  ['version_5fhelp_1771',['version_help',['../structgengetopt__args__info.html#adef454ea6f3ff4114ae5009e58360cfc',1,'gengetopt_args_info']]],
+  ['video_1772',['video',['../structjanus__ice__stats.html#a1cc37f482722daebfc26806241118da7',1,'janus_ice_stats']]],
+  ['video_5ffirst_5fntp_5fts_1773',['video_first_ntp_ts',['../structjanus__ice__stream.html#a2e8618a700f64c709f313ec1297c1430',1,'janus_ice_stream']]],
+  ['video_5ffirst_5frtp_5fts_1774',['video_first_rtp_ts',['../structjanus__ice__stream.html#ab06523c6f71c5f1062cc31ff46fba7ec',1,'janus_ice_stream']]],
+  ['video_5fis_5fkeyframe_1775',['video_is_keyframe',['../structjanus__ice__stream.html#ae2847e3d7621b7aa0607aa8bef2b86c4',1,'janus_ice_stream']]],
+  ['video_5flast_5fntp_5fts_1776',['video_last_ntp_ts',['../structjanus__ice__stream.html#a0495424c41486ebbc8432af3dbbd5688',1,'janus_ice_stream']]],
+  ['video_5flast_5frtp_5fts_1777',['video_last_rtp_ts',['../structjanus__ice__stream.html#a129d058a0d53039824e23df734309b28',1,'janus_ice_stream']]],
+  ['video_5fmid_1778',['video_mid',['../structjanus__ice__handle.html#abb592f88ec7431236bb092115a942251',1,'janus_ice_handle']]],
+  ['video_5fpayload_5ftypes_1779',['video_payload_types',['../structjanus__ice__stream.html#a229562006a71f25aeaa106bece71f7fd',1,'janus_ice_stream']]],
+  ['video_5frtcp_5fctx_1780',['video_rtcp_ctx',['../structjanus__ice__stream.html#aeb78d0130303930e4ca05c640b077367',1,'janus_ice_stream']]],
+  ['video_5fssrc_1781',['video_ssrc',['../structjanus__ice__stream.html#a847d6f965293006ab622c136e6033107',1,'janus_ice_stream']]],
+  ['video_5fssrc_5fpeer_1782',['video_ssrc_peer',['../structjanus__ice__stream.html#afe08407bd98bf1b6056f319ce398c3c5',1,'janus_ice_stream']]],
+  ['video_5fssrc_5fpeer_5frtx_1783',['video_ssrc_peer_rtx',['../structjanus__ice__stream.html#a181a7be18b80893ef2b086d479363fed',1,'janus_ice_stream']]],
+  ['video_5fssrc_5frtx_1784',['video_ssrc_rtx',['../structjanus__ice__stream.html#a3ab57a91d5fa72e20df016da9ebd7656',1,'janus_ice_stream']]],
+  ['videoorientation_5fext_5fid_1785',['videoorientation_ext_id',['../structjanus__ice__stream.html#acd2efa5f39c9555e7d185b9be929239d',1,'janus_ice_stream']]]
+];
