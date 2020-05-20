@@ -1,0 +1,18 @@
+<map id="utils.h" name="utils.h">
+<area shape="rect" id="node1" title="TURN REST API client." alt="" coords="417,5,480,32"/>
+<area shape="rect" id="node2" href="$auth_8c.html" title="Requests authentication." alt="" coords="9,80,72,107"/>
+<area shape="rect" id="node3" href="$config_8c.html" title="Configuration files parsing." alt="" coords="97,80,169,107"/>
+<area shape="rect" id="node4" href="$ice_8h.html" title="ICE/STUN/TURN processing (headers)" alt="" coords="193,80,246,107"/>
+<area shape="rect" id="node9" href="$sdp_8c.html" title="SDP processing." alt="" coords="255,229,311,256"/>
+<area shape="rect" id="node10" href="$events_8c.html" title="Event handler notifications." alt="" coords="321,80,398,107"/>
+<area shape="rect" id="node11" href="$log_8c.html" title="Buffered logging." alt="" coords="422,80,475,107"/>
+<area shape="rect" id="node12" href="$rtcp_8c.html" title="RTCP processing." alt="" coords="499,80,558,107"/>
+<area shape="rect" id="node13" href="$rtp_8c.html" title="RTP processing." alt="" coords="582,80,633,107"/>
+<area shape="rect" id="node14" href="$sdp-utils_8c.html" title="SDP utilities." alt="" coords="657,80,747,107"/>
+<area shape="rect" id="node15" href="$text2pcap_8c.html" title="Dumping of RTP/RTCP packets to text2pcap or pcap format." alt="" coords="771,80,870,107"/>
+<area shape="rect" id="node16" href="$utils_8c.html" title="Utilities and helpers." alt="" coords="894,80,955,107"/>
+<area shape="rect" id="node5" href="$janus_8h.html" title="Janus core (headers)" alt="" coords="126,155,195,181"/>
+<area shape="rect" id="node7" href="$ice_8c.html" title="ICE/STUN/TURN processing." alt="" coords="5,229,57,256"/>
+<area shape="rect" id="node6" href="$dtls_8c.html" title="DTLS/SRTP processing." alt="" coords="81,229,139,256"/>
+<area shape="rect" id="node8" href="$janus_8c.html" title="Janus core." alt="" coords="163,229,231,256"/>
+</map>

@@ -1,0 +1,14 @@
+<map id="refcount.h" name="refcount.h">
+<area shape="rect" id="node1" title="Reference counter mechanism." alt="" coords="237,5,325,32"/>
+<area shape="rect" id="node2" href="$sdp-utils_8h.html" title="SDP utilities (headers)" alt="" coords="86,80,177,107"/>
+<area shape="rect" id="node4" href="$ice_8h.html" title="ICE/STUN/TURN processing (headers)" alt="" coords="157,229,210,256"/>
+<area shape="rect" id="node5" href="$janus_8h.html" title="Janus core (headers)" alt="" coords="190,304,259,331"/>
+<area shape="rect" id="node11" href="$dtls_8h.html" title="DTLS/SRTP processing (headers)" alt="" coords="251,155,310,181"/>
+<area shape="rect" id="node12" href="$record_8h.html" title="Audio/Video recorder." alt="" coords="385,229,459,256"/>
+<area shape="rect" id="node3" href="$sdp_8h.html" title="SDP processing (headers)" alt="" coords="5,155,63,181"/>
+<area shape="rect" id="node10" href="$sdp-utils_8c.html" title="SDP utilities." alt="" coords="87,155,176,181"/>
+<area shape="rect" id="node7" href="$ice_8c.html" title="ICE/STUN/TURN processing." alt="" coords="140,379,192,405"/>
+<area shape="rect" id="node9" href="$sdp_8c.html" title="SDP processing." alt="" coords="59,379,115,405"/>
+<area shape="rect" id="node6" href="$dtls_8c.html" title="DTLS/SRTP processing." alt="" coords="248,379,305,405"/>
+<area shape="rect" id="node8" href="$janus_8c.html" title="Janus core." alt="" coords="365,379,433,405"/>
+</map>

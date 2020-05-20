@@ -1,0 +1,19 @@
+<map id="mutex.h" name="mutex.h">
+<area shape="rect" id="node1" title="Semaphors, Mutexes and Conditions." alt="" coords="464,5,540,32"/>
+<area shape="rect" id="node2" href="$refcount_8h.html" title="Reference counter mechanism." alt="" coords="418,80,506,107"/>
+<area shape="rect" id="node6" href="$janus_8h.html" title="Janus core (headers)" alt="" coords="233,379,302,405"/>
+<area shape="rect" id="node13" href="$record_8h.html" title="Audio/Video recorder." alt="" coords="599,155,674,181"/>
+<area shape="rect" id="node14" href="$auth_8c.html" title="Requests authentication." alt="" coords="581,80,644,107"/>
+<area shape="rect" id="node15" href="$text2pcap_8h.html" title="Dumping of RTP/RTCP packets to text2pcap or pcap format (headers)" alt="" coords="127,80,226,107"/>
+<area shape="rect" id="node17" href="$utils_8c.html" title="Utilities and helpers." alt="" coords="669,80,730,107"/>
+<area shape="rect" id="node3" href="$sdp-utils_8h.html" title="SDP utilities (headers)" alt="" coords="301,155,391,181"/>
+<area shape="rect" id="node5" href="$ice_8h.html" title="ICE/STUN/TURN processing (headers)" alt="" coords="173,304,226,331"/>
+<area shape="rect" id="node12" href="$dtls_8h.html" title="DTLS/SRTP processing (headers)" alt="" coords="466,229,525,256"/>
+<area shape="rect" id="node4" href="$sdp_8h.html" title="SDP processing (headers)" alt="" coords="5,229,63,256"/>
+<area shape="rect" id="node11" href="$sdp-utils_8c.html" title="SDP utilities." alt="" coords="301,229,391,256"/>
+<area shape="rect" id="node8" href="$ice_8c.html" title="ICE/STUN/TURN processing." alt="" coords="169,453,221,480"/>
+<area shape="rect" id="node10" href="$sdp_8c.html" title="SDP processing." alt="" coords="57,453,113,480"/>
+<area shape="rect" id="node7" href="$dtls_8c.html" title="DTLS/SRTP processing." alt="" coords="381,453,439,480"/>
+<area shape="rect" id="node9" href="$janus_8c.html" title="Janus core." alt="" coords="531,453,599,480"/>
+<area shape="rect" id="node16" href="$text2pcap_8c.html" title="Dumping of RTP/RTCP packets to text2pcap or pcap format." alt="" coords="127,155,226,181"/>
+</map>

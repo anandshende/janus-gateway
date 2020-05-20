@@ -1,0 +1,13 @@
+<map id="janus_ice_component" name="janus_ice_component">
+<area shape="rect" id="node1" title="Janus ICE component." alt="" coords="231,238,393,265"/>
+<area shape="rect" id="node7" href="$structjanus__ice__stream.html" title="Janus ICE stream." alt="" coords="152,349,288,376"/>
+<area shape="rect" id="node2" href="$structjanus__seq__info.html" title="A helper struct for determining when to send NACKs." alt="" coords="465,125,583,152"/>
+<area shape="rect" id="node3" href="$structjanus__dtls__srtp.html" title="Janus DTLS&#45;SRTP handle." alt="" coords="173,125,293,152"/>
+<area shape="rect" id="node4" href="$structjanus__refcount.html" title=" " alt="" coords="37,5,155,32"/>
+<area shape="rect" id="node9" href="$structjanus__ice__handle.html" title="Janus ICE handle." alt="" coords="150,439,285,465"/>
+<area shape="rect" id="node5" href="$structjanus__ice__stats.html" title="Janus media statistics container." alt="" coords="317,125,440,152"/>
+<area shape="rect" id="node6" href="$structjanus__ice__stats__info.html" title="Janus media statistics." alt="" coords="301,5,456,32"/>
+<area shape="rect" id="node8" href="$structrtcp__context.html" title="Internal RTCP state context (for RR/SR)" alt="" coords="103,238,206,265"/>
+<area shape="rect" id="node10" href="$structjanus__text2pcap.html" title="Instance of a text2pcap recorder." alt="" coords="313,349,442,376"/>
+<area shape="rect" id="node11" href="$structjanus__rtp__switching__context.html" title="RTP context, in order to make sure SSRC changes result in coherent seq/ts increases." alt="" coords="418,231,569,272"/>
+</map>

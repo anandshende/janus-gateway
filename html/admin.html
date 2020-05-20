@@ -1,181 +1,266 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Janus WebRTC Server: Admin/Monitor</title>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" ></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.2/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.1.0/bootbox.min.js"></script>
-<script type="text/javascript" src="admin.js"></script>
-<script>
-	$(function() {
-		$(".navbar-static-top").load("navbar.html", function() {
-			$(".navbar-static-top li.dropdown").addClass("active");
-			$(".navbar-static-top a[href='admin.html']").parent().addClass("active");
-		});
-		$(".footer").load("footer.html");
-	});
-</script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cerulean/bootstrap.min.css" type="text/css"/>
-<link rel="stylesheet" href="css/demo.css" type="text/css"/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css" type="text/css"/>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: Admin/Monitor API</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-
-<a href="https://github.com/meetecho/janus-gateway"><img style="position: absolute; top: 0; left: 0; border: 0; z-index: 1001;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png" alt="Fork me on GitHub"></a>
-
-<nav class="navbar navbar-default navbar-static-top">
-</nav>
-
-<div class="container">
-	<div class="row">
-		<div class="col-md-12">
-			<div class="page-header">
-				<h1>Janus WebRTC Server: Admin/Monitor</h1>
-			</div>
-
-			<div>
-				<ul id="admintabs" class="nav nav-tabs" role="tablist">
-					<li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
-					<li role="presentation" class="disabled"><a href="#serverinfo" aria-controls="serverinfo" role="tab" data-toggle="tab">Server Info</a></li>
-					<li role="presentation" class="disabled"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
-					<li role="presentation" class="disabled"><a href="#plugins" aria-controls="plugins" role="tab" data-toggle="tab">Plugins</a></li>
-					<li role="presentation" class="disabled"><a href="#handlesinfo" aria-controls="handlesinfo" role="tab" data-toggle="tab">Handles</a></li>
-					<li role="presentation" class="disabled"><a href="#tokens" aria-controls="tokens" role="tab" data-toggle="tab">Stored Tokens</a></li>
-				</ul>
-
-				<div class="tab-content" style="padding: 20px;">
-					<div role="tabpanel" class="tab-pane fade in active" id="home">
-						<p>This is just an example of how you can build an UI on top of the
-						existing <code>Admin/Monitor</code> interface. This page will only
-						work as it is if you enabled the API (which is disabled by default)
-						and you're using the default values. Edit the backend settings in
-						the <code>admin.js</code> JavaScript code to adapt it to your
-						configuration if you changed anything.</p>
-						<p>The <code>Server Info</code> tab, as the name suggests, provides
-						you with a view of the information related to the Janus instance
-						you're using, e.g., in terms of the features that have been enabled,
-						the modules that are available and so on. That's the same info you'd
-						get contacting the Janus API at the <code>/janus/info</code> backend.</p>
-						<p>The <code>Settings</code> tab instead allows you to inspect a
-						few of the current settings in Janus (e.g., debug level and so on)
-						and provides you with a way to change them dynamically.</p>
-						<p>The <code>Plugins</code> tab presents the list of media plugins
-						available in this Janus instance, and allows you to interact with
-						them, assuming they implement the <code>handle_admin_message</code> API.</p>
-						<p>The <code>Handles</code> tab allows you to browse the currently active sessions
-						and handles in Janus. Selecting a specific handle will provide you
-						with all the current info related to it, including plugin it is
-						attached to, any plugin specific information that may be relevant,
-						ICE/DTLS states, amount of data being exchanged and so on. This
-						section is especially helpful when you want to debug issues with
-						a PeerConnection: you can find more details in
-						<a href="http://www.meetecho.com/blog/understanding-the-janus-admin-api/" target="_blank">this blog post</a>.</p>
-						<p>Finally, the <code>Stored Tokens</code> tab allows you to list
-						existing authentication tokens, create new ones, associate plugin
-						permissions and the like. This feature will only be possible if
-						you enabled the stored-token authentication mechanism in Janus, of course.</p>
-					</div>
-					<div role="tabpanel" class="tab-pane fade" id="serverinfo">
-						<h4>Server Info</h4>
-						<div>
-							<table class="table table-striped" id="server-details">
-							</table>
-						</div>
-						<h4>Dependencies</h4>
-						<div>
-							<table class="table table-striped" id="server-deps">
-							</table>
-						</div>
-						<h4>Plugins</h4>
-						<div>
-							<table class="table table-striped" id="server-plugins">
-							</table>
-						</div>
-						<h4>Transports</h4>
-						<div>
-							<table class="table table-striped" id="server-transports">
-							</table>
-						</div>
-						<h4>Event handlers</h4>
-						<div>
-							<table class="table table-striped" id="server-handlers">
-							</table>
-						</div>
-					</div>
-					<div role="tabpanel" class="tab-pane fade" id="settings">
-						<h4>Settings <i id="update-settings" class="fa fa-refresh" title="Refresh settings" style="cursor: pointer;"></i></h4>
-						<div>
-							<table class="table table-striped" id="server-settings">
-							</table>
-						</div>
-					</div>
-					<div role="tabpanel" class="tab-pane fade" id="plugins">
-						<h4>Plugins</h4>
-						<div class="row">
-							<div class="col-md-3">
-								<table class="table" id="plugins-list">
-								</table>
-							</div>
-							<div id="plugin-message" class="col-md-9 hide">
-								<div class="row">
-									<h5>Request</h5>
-									<table class="table" id="plugin-request">
-									</table>
-								</div>
-								<div class="row">
-									<h5>Response</h5>
-									<pre id="plugin-response"></pre>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div role="tabpanel" class="tab-pane fade" id="handlesinfo">
-						<div id="sessions" class="col-md-2">
-							<h4>Sessions (<span id="sessions-num">0</span>) <i id="update-sessions" class="fa fa-refresh" title="Refresh list of sessions" style="cursor: pointer;"></i></h4>
-							<div id="sessions-list" class="list-group">
-							</div>
-						</div>
-						<div id="handles" class="col-md-2">
-							<h4>Handles (<span id="handles-num"></span>) <i id="update-handles" class="fa fa-refresh" title="Refresh list of handles" style="cursor: pointer;"></i></h4>
-							<div id="handles-list" class="list-group">
-							</div>
-						</div>
-						<div id="info" class="col-md-8">
-							<h4>Handle Info <i id="update-handle" class="fa fa-refresh" title="Refresh handle info" style="cursor: pointer;"></i></h4>
-							<div id="options" class="hide">
-								<label class="checkbox-inline" title="Autorefresh this info every 5s">
-									<input id="autorefresh" type="checkbox" value="" title="Autorefresh this info every 5s">Autorefresh
-								</label>
-								<label class="checkbox-inline" title="Show information as HTML">
-									<input id="prettify" type="checkbox" value="" title="Show information as HTML">Prettify
-								</label>
-								<label class="checkbox-inline" title="Start of stop capturing traffic to .pcap">
-									<input id="capture" type="checkbox" value="" title="Start of stop capturing traffic to .pcap">
-									<span id="capturetext">Start capture</span>
-								</label>
-							</div>
-							<div id="handle-info">
-							</div>
-						</div>
-					</div>
-					<div role="tabpanel" class="tab-pane fade" id="tokens">
-						<h4>Stored Tokens <i id="update-tokens" class="fa fa-refresh" title="Refresh tokens" style="cursor: pointer;"></i></h4>
-						<div>
-							<table class="table table-striped" id="auth-tokens">
-							</table>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<hr>
-	<div class="footer">
-	</div>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
 </div>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="PageDoc"><div class="header">
+  <div class="headertitle">
+<div class="title">Admin/Monitor API </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p>Recent versions of Janus introduced a new feature: an Admin/Monitor API that can be used to ask Janus for more specific information related to sessions and handles. This is especially useful when you want to debug issues at the media level.</p>
+<dl class="section note"><dt>Note</dt><dd>Right now, this new API mostly allows you to retrieve information, but only act on part of it: for more interaction (e.g., to force a session removal), you can rely on the existing <a class="el" href="rest.html">RESTful, WebSockets, RabbitMQ, MQTT, Nanomsg and UnixSockets API</a> for the purpose. Besides, notice that this is a pull-based API. If you're interested in asynchronous notifications about the internal state of core and plugins, check the recently added janus_eventhandler mechanism instead.</dd></dl>
+<p>The API, for security reasons, is typically not enabled by default in any of the transport plugins: that's definitely the case for the stock transport plugins, for instance, while additional, third party plugins may choose to expose the functionality without requiring any tweaking. As to the existing transport, you can enable the admin API by editing the <code></code>[ <code>admin</code> <code></code>] section in the related transport configuration file (e.g., <code>janus.transport.http.jcfg</code> for the REST interface, to use the admin API over HTTP). The configuration is pretty much the same as the one for the Janus API. In addition, you can configure restrictions in the form of a password/secret that clients need to provide or other transport-specific ones.</p>
+<p>For what concerns the syntax, it's very similar to the <a class="el" href="rest.html">RESTful, WebSockets, RabbitMQ, MQTT, Nanomsg and UnixSockets API</a> and so this page will briefly discuss the differences. Notice that, when using WebSockets, you'll have to use <code>janus-admin-protocol</code> as the subprotocol, instead of the <code>janus-protocol</code> of the regular Janus API.</p>
+<h1><a class="anchor" id="adminreq"></a>
+Admin API requests</h1>
+<p>There are several different requests that this API implementents, so, to make this documentation easier to read and the functionality easier to identify, we can group requests depending on what they provide.</p>
+<h2><a class="anchor" id="adminreqg"></a>
+Generic requests</h2>
+<ul>
+<li><code>info:</code> get the generic on the Janus instance; this returns exactly the same information that a Janus API <code>info</code> request would return, and doesn't require any secret;</li>
+<li><code>ping:</code> a simple ping/pong mechanism for the Admin API, that returns a <code>pong</code> back that the client can use as a healthcheck or to measure the protocol round-trip time; together with the <code>info</code> request introduced above, it's the only one that doesn't require a secret.</li>
+</ul>
+<h2><a class="anchor" id="adminreqc"></a>
+Configuration-related requests</h2>
+<ul>
+<li><code>get_status:</code> returns the current value for the settings that can be modified at runtime via the Admin API (see below);</li>
+<li><code>set_session_timeout:</code> change the session timeout value in Janus;</li>
+<li><code>set_log_level:</code> change the log level in Janus;</li>
+<li><code>set_log_timestamps:</code> selectively enable/disable adding a timestamp to all log lines Janus writes on the console and/or to file;</li>
+<li><code>set_log_colors:</code> selectively enable/disable using colors in all log lines Janus writes on the console and/or to file;</li>
+<li><code>set_locking_debug:</code> selectively enable/disable a live debugging of the locks in Janus on the fly (useful if you're experiencing deadlocks and want to investigate them);</li>
+<li><code>set_refcount_debug:</code> selectively enable/disable a live debugging of the reference counters in Janus on the fly (useful if you're experiencing memory leaks in the Janus structures and want to investigate them);</li>
+<li><code>set_libnice_debug:</code> selectively enable/disable libnice debugging;</li>
+<li><code>set_min_nack_queue:</code> change the value of the min NACK queue window;</li>
+<li><code>set_no_media_timer:</code> change the value of the no-media timer property;</li>
+<li><code>set_slowlink_threshold:</code> change the value of the slowlink-threshold property.</li>
+</ul>
+<h2><a class="anchor" id="adminreqt"></a>
+Token-related requests</h2>
+<ul>
+<li><code>add_token:</code> add a valid token (only available if you enabled the <a class="el" href="auth.html#token">Stored token based authentication mechanism</a>);</li>
+<li><code>allow_token:</code> give a token access to a plugin (only available if you enabled the <a class="el" href="auth.html#token">Stored token based authentication mechanism</a>);</li>
+<li><code>disallow_token:</code> remove a token access from a plugin (only available if you enabled the <a class="el" href="auth.html#token">Stored token based authentication mechanism</a>);</li>
+<li><code>list_tokens:</code> list the existing tokens (only available if you enabled the <a class="el" href="auth.html#token">Stored token based authentication mechanism</a>);</li>
+<li><code>remove_token:</code> remove a token (only available if you enabled the <a class="el" href="auth.html#token">Stored token based authentication mechanism</a>).</li>
+</ul>
+<h2><a class="anchor" id="adminreqs"></a>
+Session-related requests</h2>
+<ul>
+<li><code>accept_new_sessions:</code> configure whether Janus should accept new incoming sessions or not; this can be particularly useful whenever, e.g., you want to stop accepting new sessions because you're draining this instance;</li>
+<li><code>list_sessions:</code> list all the sessions currently active in Janus (returns an array of session identifiers);</li>
+<li><code>destroy_session:</code> destroy a specific session; this behaves exactly as the <code>destroy</code> request does in the Janus API.</li>
+</ul>
+<h2><a class="anchor" id="adminreqh"></a>
+Handle- and WebRTC-related requests</h2>
+<ul>
+<li><code>list_handles:</code> list all the ICE handles currently active in a Janus session (returns an array of handle identifiers);</li>
+<li><code>handle_info:</code> list all the available info on a specific ICE handle; if a <code>plugin_only</code> property is set to <code>true</code> then only the plugin-specific information is returned, excluding the more verbose WebRTC info and stats;</li>
+<li><code>start_pcap:</code> start dumping incoming and outgoing RTP/RTCP packets of a handle to a pcap file (e.g., for ex-post analysis via Wireshark);</li>
+<li><code>stop_pcap:</code> stop the pcap dump;</li>
+<li><code>start_text2pcap:</code> same as above, but saves to a text file instead, to be fed to <code>text2pcap</code> in order to generate a <code></code>.pcap or <code></code>.pcapng file;</li>
+<li><code>stop_text2pcap:</code> stop the text2pcap dump;</li>
+<li><code>message_plugin:</code> send a synchronous request to a plugin and return a response; implemented by most plugins to facilitate and streamline the management of plugin resources (e.g., creating rooms in a conference plugin);</li>
+<li><code>hangup_webrtc:</code> hangups the PeerConnection associated with a specific handle; this behaves exactly as the <code>hangup</code> request does in the Janus API.</li>
+<li><code>detach_handle:</code> detached a specific handle; this behaves exactly as the <code>detach</code> request does in the Janus API.</li>
+</ul>
+<h2><a class="anchor" id="adminreqe"></a>
+Event handlers-related requests</h2>
+<ul>
+<li><code>query_eventhandler:</code> send a synchronous request to an event handler and return a response; implemented by most event handlers to dynamically configure some of their properties;</li>
+<li><code>custom_event:</code> push a custom "external" event to notify via event handlers; this can be useful whenever info from a third-party application needs to be easily correlated to events originated by Janus, or to push information Janus doesn't have available (e.g., a script polling CPU usage regularly).</li>
+</ul>
+<h2><a class="anchor" id="adminreql"></a>
+Custom logging-related requests</h2>
+<ul>
+<li><code>custom_logline:</code> push a custom "external" string to print on the logs; this can be useful whenever info from a third-party application needs to be injected in the Janus logs for whatever reason. The log level can be chosen.</li>
+</ul>
+<h2><a class="anchor" id="adminreqz"></a>
+Helper requests</h2>
+<ul>
+<li><code>resolve_address:</code> helper request to evaluate whether this Janus instance can resolve an address via DNS, and how long it takes;</li>
+<li><code>test_stun:</code> helper request to evaluate whether this Janus instance can contact a STUN server, what is returned, and how long it takes.</li>
+</ul>
+<h1><a class="anchor" id="adminsyntax"></a>
+Admin API syntax</h1>
+<p>Following the same spirit of the <a class="el" href="rest.html">RESTful, WebSockets, RabbitMQ, MQTT, Nanomsg and UnixSockets API</a> these methods need to be invoked on the right path and/or providing the right <code>session_id</code> and <code>handle_id</code> identifiers. Specifically, the following requests must be invoked without any session/handle information, as they're global requests:</p>
+<ul>
+<li><code>info</code> , <code>ping</code> , <code>get_status</code> , all the configuration setters, all the token requests, all the event-handler related requests, all the helper requests, <code>accept_new_sessions</code> and <code>list_sessions</code> </li>
+</ul>
+<p>Here's an example of how such a request and its related response might look like:</p>
+<pre class="fragment">POST /admin
+{
+    "janus" : "list_sessions",
+    "transaction" : "&lt;random alphanumeric string&gt;",
+    "admin_secret" : "&lt;password specified in janus.jcfg, if any&gt;"
+}
+</pre><pre class="fragment">{
+    "janus" : "success",
+    "transaction" : "&lt;same as the request&gt;",
+    "sessions" : [
+        &lt;session ID #1&gt;,
+        &lt;session ID #2&gt;,
+        [..]
+        &lt;session ID #n&gt;
+    ]
+}
+</pre><p>On the other hand, some requests may be targeting a specific session, in which case a <code>session_id</code> property must be provided. Specifically, these are the requests that do need a valid session identifier:</p>
+<ul>
+<li><code>destroy_session</code> , <code>list_handles</code> </li>
+</ul>
+<p>Using the REST API, this can be done by appending the session identifier (e.g., one of the ID returned by a <code>list_sessions</code> call) to the API root, but a more generic approach that works for all transports is to just specify a <code>session_id</code> property in the request, e.g.:</p>
+<pre class="fragment">POST /admin/12345678
+{
+    "janus" : "list_handles",
+    "session_id" : 12345678,
+    "transaction" : "&lt;random alphanumeric string&gt;",
+    "admin_secret" : "&lt;password specified in janus.jcfg, if any&gt;"
+}
+</pre><pre class="fragment">{
+    "janus" : "success",
+    "transaction" : "&lt;same as the request&gt;",
+    "session_id" : 12345678,
+    "handles" : [
+        &lt;handle ID #1&gt;,
+        &lt;handle ID #2&gt;,
+        [..]
+        &lt;handle ID #n&gt;
+    ]
+}
+</pre><p>Finally, some requests need not only a valid session identifier, but a handle identifier as well, as they may address a specific handle that the Janus instance is serving. It is the case for all requests that address a specific handle and/or the related PeerConnection, namely:</p>
+<ul>
+<li><code>handle_info</code> , all the pcap-related requests, <code>message_plugin</code> , <code>hangup_webrtc</code> and <code>detach_handle</code> </li>
+</ul>
+<p>The following is an example of how a <code>handle_info</code> call addressing a specific handle might look like. Since this is a handle-specific request, the correct handle identifier must be referenced, e.g., by appending the ID to the session it belongs to or adding a <code>handle_id</code> attribute besides the <code>session_id</code> parent:</p>
+<pre class="fragment">POST /admin/12345678/98765432
+{
+    "janus" : "handle_info",
+    "session_id" : 12345678,
+    "handle_id" : 98765432,
+    "transaction" : "&lt;random alphanumeric string&gt;",
+    "admin_secret" : "&lt;password specified in janus.jcfg, if any&gt;"
+}
+</pre><pre class="fragment">{
+    "janus" : "success",
+    "transaction" : "&lt;same as the request&gt;",
+    "session_id" : 12345678,
+    "handle_id" : 98765432,
+    "info" : {
+        "session_id" : 12345678,
+        "session_last_activity": 7927759122,
+        "session_transport": "janus.transport.websockets",
+        "handle_id" : 98765432,
+        "opaque_id": "echotest-YZcsLRCI4uSV",
+        "loop-running": true,
+        "created": 18695669309,
+        "current_time": 18706199704,
+        "plugin": "janus.plugin.echotest",
+        "plugin_specific": {
+            // plugin specific (e.g., EchoTest internals)
+        },
+        "flags": {
+            // flags
+        },
+        "agent-created": 18696092523,
+        "ice-mode": "full",
+        "ice-role": "controlled",
+        "sdps": {
+            "profile": "UDP/TLS/RTP/SAVPF",
+            "local": "v=0[..]",
+            "remote": "v=0[..]"
+        },
+        "queued-packets": 0,
+        "streams": [
+            // WebRTC info, including SSRCs, codecs, ICE and DTLS states, RTCP stats, etc.
+        ]
+    }
+}
+</pre><p>With respect to the <code>handle_info</code> request we used as an example, here, the actual content of the last response is omitted for brevity, but you're welcome to experiment with it in order to check whether more information (of a different nature, maybe) may be useful to have. In particular, you may want to play with the plugin-specific details, as different plugins will return different information according to what they provide: for instance, the VideoRoom plugin might clarify whether a handle is being used for publishing media or for receiving it, and what are the involved IDs, the current status of the delivery, and so on. At the same time, the <code>streams</code> object will contain invaluable details related to the WebRTC PeerConnection associated with the handle, as in input/output statistics statistics (bytes, bytes per seconds, NACKs, etc.) or the SDP/ICE/DTLS states. Notice that the information as returned by the Admin API here is just a snapshot: if you're more interested in how this information evolves in a more dynamic way, you may want to start using the Event Handlers instead, which return pretty much the same information, but conveying it as dynamic events pushed to an application you control.</p>
+<h1><a class="anchor" id="adminpcap"></a>
+Capturing unencrypted WebRTC traffic</h1>
+<p>As anticipated, you can also enable/disable the dumping of the RTP/RTCP packets a handle is sending and receiving to a pcap or text2pcap file. This is especially useful for debugging reasons, e.g., to check whether or not there are issues in a specific packet Janus is sending or receiving with tools like Wireshark. Notice that this is not supposed to be used for recording Janus streams: while it can be used for that, the <a class="el" href="structjanus__recorder.html" title="Structure that represents a recorder.">janus_recorder</a> utility is much more suited for the task, and is what all plugins make use of when they're interested in <a class="el" href="recordings.html">Recordings</a> .</p>
+<p>The syntax for the <code>start_pcap</code> and <code>start_text2pcap</code> commands is trivial, and apart from the command name pretty much the same: all you need to specify are information on the handle to dump, information on the target file (target folder and filename), and whether to truncate packets or not before dumping them:</p>
+<pre class="fragment">POST /admin/12345678/98765432
+{
+    "janus" : "start_pcap",     // Use start_text2pcap for a text file instead
+    "folder" : "&lt;folder to save the dump to; optional, current folder if missing&gt;",
+    "filename" : "&lt;filename of the dump; optional, random filename if missing&gt;",
+    "truncate" : "&lt;number of bytes to truncate packet at; optional, truncate=0 (don't truncate) if missing&gt;",
+    "transaction" : "&lt;random alphanumeric string&gt;",
+    "admin_secret" : "&lt;password specified in janus.jcfg, if any&gt;"
+}
+</pre><p>If successful, the full path of the dump file can be obtained by doing a <code>handle_info</code> request. A <code>stop_pcap</code> or <code>start_text2pcap</code> command is even easier to generate, as it doesn't need any parameter:</p>
+<pre class="fragment">POST /admin/12345678/98765432
+{
+    "janus" : "stop_pcap",      // Use stop_text2pcap if you started a text-based capture
+    "transaction" : "&lt;random alphanumeric string&gt;",
+    "admin_secret" : "&lt;password specified in janus.jcfg, if any&gt;"
+}
+</pre> </div></div><!-- contents -->
+</div><!-- PageDoc -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generated by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
 </body>
 </html>
